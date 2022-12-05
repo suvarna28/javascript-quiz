@@ -11,7 +11,7 @@
 <body>
     <main>
         <div class="container">
-            <div id="scores"><button value="totalScores">View HighScores</button></div>
+            <div id="viewScores"><button value="totalScores">View HighScores</button></div>
             <div id="time">Time: </div>
             <div id="timeRemaining">75</div>
         </div>
@@ -19,15 +19,15 @@
             <div id="intro" style="display:show;">
                 <h2>Coding Quiz Challenge</h2>
                 <pre>Try to answer the following code related questions within the 
-                time limit. Keep in mind that incorrect answers 
-                will penalize your scoretime by ten seconds.</pre>
+    time limit. Keep in mind that incorrect answers 
+    will penalize your scoretime by ten seconds.</pre>
                 <button id="start">Start Quiz</button>
             </div>
             
             <div id="dataTypes" style="display:none;"> 
                 <p>Commonly used datatypes DO NOT include _____:</p><br>
                 <button id="strings">1: strings</button><br>
-                <button id="booleans">2: booleans</button><br>
+                <button id="booleans1">2: booleans</button><br>
                 <button id="alerts">3: alerts</button><br>
                 <button id="numbers">4: numbers</button><br>
             </div>
@@ -44,10 +44,10 @@
                 <p>Arrays in JavaScript can be used to store _____:</p><br>
                 <button id="numbersstrings">1: numbers and strings</button><br>
                 <button id="otherarrays">2: other arrays</button><br>
-                <button id="booleans">3: booleans</button><br>
+                <button id="booleans2">3: booleans</button><br>
                 <button id="allabove">4: all of the above</button><br>
             </div>
-            
+
             <div id="tools" style="display:none;">
                 <p>A very useful tool used during development and debugging for printing content to the debugger is _____:</p><br>
                 <button id="JavaScript">1: JavaScript</button><br>
@@ -58,13 +58,13 @@
 
             <div id="alldone" style="display:none;">
                 <h3>All done!</h3>
-                <div>Your final score is : <p id="score"></p></div>
+                <div>Your final score is : <p id="showScore"></p></div>
                 <label for="initials">Enter your initials : </label>
                 <input type="text" id="initials" name="initials">
                 <button id="submit">Submit</button>
             </div>
 
-            <div id="scores" style="display:show;">
+            <div id="scoresList" style="display:none;">
                 <h3>HighScores</h3>
                 <p id="showList"></p>
                 <button id="goback">Go Back</button>
@@ -87,10 +87,4 @@
 </html>
 
 
-            <!-- <div id="strings" style="display:none;">
-                <p>String values must be enclosed within _____ when being assigned to variables.</p><br>
-                <button id="commas">1: commas</button><br>
-                <button id="curlybrackets">2: curly brackets</button><br>
-                <button id="quotes">3: quotes</button><br>
-                <button id="parentheses2">4: parentheses</button><br>
-            </div> -->
+            

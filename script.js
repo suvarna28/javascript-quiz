@@ -10,7 +10,7 @@ var correct = document.getElementById('correct');
 var wrong = document.getElementById('wrong');
 var timerCount = 75;
 var allDone = document.getElementById('alldone');
-var scores = document.getElementById('scores');
+var scoresList = document.getElementById('scoresList');
 var submitButton = document.getElementById('submit');
 var initialsEntered = document.getElementById('initials');
 var goBack = document.getElementById('goback');
@@ -20,7 +20,7 @@ var finalList;
 
 function startQuiz(){
     timeRemaining.textContent = 75;
-    timerCount = 75;
+    timerCount = 75; 
     startTimer();
     dataTypesQuestion();   
 }
@@ -47,12 +47,12 @@ function dataTypesQuestion(){
     intro.style = 'display:none';   
     if(dataTypes.checkVisibility() == true) {
         document.getElementById("strings").addEventListener("click", wrongAnswer)
-        document.getElementById("booleans").addEventListener("click", wrongAnswer)
+        document.getElementById("booleans1").addEventListener("click", wrongAnswer)
         document.getElementById("alerts").addEventListener("click", correctAnswer)
         document.getElementById("numbers").addEventListener("click", wrongAnswer)            
     }
     document.addEventListener("click", function(e){   
-        if((e.target.id === "strings") || (e.target.id === "booleans") || (e.target.id === "alerts") || (e.target.id === "numbers") ){
+        if((e.target.id === "strings") || (e.target.id === "booleans1") || (e.target.id === "alerts") || (e.target.id === "numbers") ){
             conditionQuestion();
         }
     })     
@@ -80,11 +80,11 @@ function arraysQuestion(){
     if(arrays.checkVisibility() == true) {
         document.getElementById("numbersstrings").addEventListener("click", wrongAnswer)
         document.getElementById("otherarrays").addEventListener("click", wrongAnswer)
-        document.getElementById("booleans").addEventListener("click", wrongAnswer)
+        document.getElementById("booleans2").addEventListener("click", wrongAnswer)
         document.getElementById("allabove").addEventListener("click", correctAnswer) 
     }  
     document.addEventListener("click", function(e){  
-        if((e.target.id === "numbersstrings") || (e.target.id === "otherarrays") || (e.target.id === "booleans") || (e.target.id === "allabove") ){
+        if((e.target.id === "numbersstrings") || (e.target.id === "otherarrays") || (e.target.id === "booleans2") || (e.target.id === "allabove") ){
             toolsQuestion();
         }
     })
@@ -107,11 +107,9 @@ function toolsQuestion(){
 }
 
 function finalScore(){
-    wrong.style = "display:none";
-    correct.style = "display:none";
     tools.style = 'display:none';
     allDone.style = 'display:show';
-    document.getElementById("score").textContent = timerCount;
+    document.getElementById("showScore").textContent = timerCount;
     submitButton.addEventListener("click", highScore);
     clearInterval(timeLeft);
 }
@@ -120,10 +118,10 @@ function highScore(){
     wrong.style = "display:none";
     correct.style = "display:none";
     allDone.style = 'display:none';
-    scores.style = 'display:show';
+    scoresList.style = 'display:show';
     finalList = {
         nameInitials: document.getElementById("initials").value,
-        score: document.getElementById("score").textContent
+        score: document.getElementById("showScore").textContent
     }
     localStorage.setItem("finalList", JSON.stringify(finalList));
     if (finalList !== null) {
@@ -131,7 +129,7 @@ function highScore(){
     }
     goBack.addEventListener("click", function () { 
         intro.style = 'display:show';
-        scores.style = 'display:none';
+        scoresList.style = 'display:none';
         timeRemaining.textContent = 75;
     })
     clearScores.addEventListener("click", function () { 
@@ -155,22 +153,3 @@ function wrongAnswer(){
 
 startButton.addEventListener("click", startQuiz); 
 
-// function stringsQuestion(){
-//     arrays.style = 'display:none';
-//     strings.style = 'display:show';
-    
-//     console.log("Here");
-
-//     if(strings.checkVisibility() == true) {
-//         document.getElementById("commas").addEventListener("click", wrongAnswer)
-//         document.getElementById("curlybrackets").addEventListener("click", wrongAnswer)
-//         document.getElementById("quotes").addEventListener("click", correctAnswer)
-//         document.getElementById("parentheses2").addEventListener("click", wrongAnswer) 
-//     }  
-
-//     document.addEventListener("click", function(e){   
-//         if((e.target.id === "commas") || (e.target.id === "curlybrackets") || (e.target.id === "quotes") || (e.target.id === "parentheses2") ){
-//             toolsQuestion();
-//         }
-//     })
-// }

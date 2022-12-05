@@ -7,7 +7,7 @@ body {
     display: flex;
 }
 
-#scores {
+#viewScores {
     width: 50%;
     text-align: left;
 }
