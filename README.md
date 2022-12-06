@@ -25,7 +25,7 @@ N/A
 
 ## Link to the deployed application
 
-
+https://suvarna28.github.io/javascript-quiz/
 
 ## Credits
 
