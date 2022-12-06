@@ -2,13 +2,14 @@
 
 ## Description 
 
-This is an application that generators ramdom passwords based on user's requirement. The started code containing HTML and CSS is provided, the challenge here was to build the logic. Give it try !!
+This is an application that contains a simple multiple choice JavaScript quiz with four questions and 75 seconds to answer them. 
 
-* Click on the "Genarate Password" button to start.
-* Then it asks for password length, we have considered a password length range of 8 or greater and 128 or smaller. If you select a length other than this then it gives an alert box asking to select the specified range. 
-* Then it asks for a series of questions to select special characters, numbers, small letters and capital letters. 
-* If not a single character is selected then it gives an alert message and then the program starts over.
-* At last, it generates the password based on user requirements.
+* Click on the "Start" button to start.
+* Then a timer will start and first question will appear, once you click on one of the options then next question will appear and also with the next question you can see if your previous answer was right or wrong.
+* Every wrong answer will deduct 10 seconds from the timer.
+* So higher the score the better your answers are. 
+* Once you answer all questions or the timer is up, a "All Done" section will appear where you can enter your initials and once you click "Submit" button your score will be saved.
+* Next, a page appears that shows your current score, "Go Back" button to retake the quiz, it also has "View Highscores" button which shows all your scores of the quiz attempts. Click "Hide Highscores" to hide the scores. Click "Clear Highscores" to clear previous scores. 
 
 ## Features
 
@@ -24,10 +25,10 @@ N/A
 
 ## Link to the deployed application
 
-https://suvarna28.github.io/password-generator/
+
 
 ## Credits
 
-* Myles Smith, for discussing his logic and approach in the class while discussing the challenge. The logic is based on his approach
-* Our Instructor Gabrial Perry, for discussing Myles's approach
+* Our TA, Sebastian for explaining div hide and show.
+* Stackoverflow Website for the syntax I needed for logic at some places. 
 

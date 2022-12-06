@@ -36,7 +36,8 @@ function startTimer() {
         conditions.style = 'display:none';  
         arrays.style = 'display:none';  
         tools.style = 'display:none';  
-        allDone.style = 'display:show';  
+        allDone.style = 'display:show'; 
+        submitButton.addEventListener("click", highScore);
         clearInterval(timeLeft);
       }
     }, 1000); 
