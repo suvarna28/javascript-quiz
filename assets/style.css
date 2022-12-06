@@ -1,17 +1,15 @@
+/* Entire body styling */
 body {
     color: #932f6d;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* For flexing div items */
 .container {
     display: flex;
 }
 
-/* #viewScores {
-    width: 50%;
-    text-align: left;
-} */
-
+/* Styling to display time on the screen */
 #time {
     width: 50%;
     text-align: right;
@@ -22,16 +20,19 @@ body {
     text-align: left;
 }
 
+/* Styling to display questions on the screen */
 #questions {
     width: 100%;
     text-align: center;
 }
 
+/* Styling for Horizontal line */
 hr {
     width: 30%;
     text-align: center;
 }
 
+/* Styling for all the buttons on the screen */
 button, #submit {
     width: fit-content;
     background-color: #932f6d;

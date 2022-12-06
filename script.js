@@ -18,6 +18,7 @@ var clearScores = document.getElementById('clearscores');
 var viewFinalScores = document.getElementById('viewfinalscores');
 var hideFinalScores = document.getElementById('hidefinalscores');
 
+/* Function that gets called when the start button is clicked */
 
 function startQuiz(){
     timeRemaining.textContent = 75;
@@ -25,6 +26,8 @@ function startQuiz(){
     startTimer();
     dataTypesQuestion();   
 }
+
+/* Start timer */
 
 function startTimer() {
     timeLeft = setInterval(function() {
@@ -43,6 +46,7 @@ function startTimer() {
     }, 1000); 
 }
 
+/* First question of the quiz and it's related logic when respective buttons are clicked */
 
 function dataTypesQuestion(){
     dataTypes.style = 'display:show';
@@ -59,7 +63,9 @@ function dataTypesQuestion(){
         }
     })     
 }
-        
+     
+/* Second question of the quiz and it's related logic when respective buttons are clicked */
+
 function conditionQuestion(){
     dataTypes.style = 'display:none';
     conditions.style = 'display:show';
@@ -75,6 +81,8 @@ function conditionQuestion(){
         }
     })
 }
+
+/* Third question of the quiz and it's related logic when respective buttons are clicked */
 
 function arraysQuestion(){
     conditions.style = 'display:none';
@@ -92,6 +100,8 @@ function arraysQuestion(){
     })
 }
 
+/* Fourth question of the quiz and it's related logic when respective buttons are clicked */
+
 function toolsQuestion(){
     arrays.style = 'display:none';
     tools.style = 'display:show';
@@ -108,6 +118,8 @@ function toolsQuestion(){
     })
 }
 
+/* Function that shows up "All Done" section when all questions are answered and calls in finalScore function */
+
 function finalScore(){
     tools.style = 'display:none';
     allDone.style = 'display:show';
@@ -115,6 +127,8 @@ function finalScore(){
     submitButton.addEventListener("click", highScore);
     clearInterval(timeLeft);
 }
+
+/* Function that saves all the scores and displays all the scores based on what buttons the user clicks */
 
 function highScore(){
     wrong.style = "display:none";
@@ -161,11 +175,15 @@ function highScore(){
     })
 }
 
+/* Function that displays the text "Correct" on the screen if the answer is correct */
+
 function correctAnswer(){
     wrong.style = "display:none";
     correct.style = "display:none";
     correct.style = "display:show";
 }
+
+/* Function that displays the text "Wrong" on the screen if the answer is wrong */
 
 function wrongAnswer(){
     wrong.style = "display:none";
@@ -174,6 +192,8 @@ function wrongAnswer(){
     timeRemaining.textContent = timeRemaining.textContent - 10;
     timerCount = timeRemaining.textContent;
 }
+
+/* Start of the quiz, start button is clicked and startQuiz function is called */
 
 startButton.addEventListener("click", startQuiz); 
 
