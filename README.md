@@ -30,5 +30,5 @@ https://suvarna28.github.io/javascript-quiz/
 ## Credits
 
 * Our TA, Sebastian for explaining div hide and show.
-* Stackoverflow Website for the syntax I needed for logic at some places. 
+* Stackoverflow Website for the syntax I needed. 
 
