@@ -15,7 +15,8 @@ var submitButton = document.getElementById('submit');
 var initialsEntered = document.getElementById('initials');
 var goBack = document.getElementById('goback');
 var clearScores = document.getElementById('clearscores');
-var finalList;
+var viewFinalScores = document.getElementById('viewfinalscores');
+var hideFinalScores = document.getElementById('hidefinalscores');
 
 
 function startQuiz(){
@@ -119,21 +120,43 @@ function highScore(){
     correct.style = "display:none";
     allDone.style = 'display:none';
     scoresList.style = 'display:show';
-    finalList = {
+    var finalList = {
         nameInitials: document.getElementById("initials").value,
         score: document.getElementById("showScore").textContent
     }
-    localStorage.setItem("finalList", JSON.stringify(finalList));
-    if (finalList !== null) {
-        document.getElementById("showList").textContent = "1: " + finalList.nameInitials + "    " + finalList.score
+    var initialsArray = []; 
+    initialsArray.push(finalList);
+    localStorage.setItem("initialsArray", JSON.stringify(initialsArray));
+    initialsArray = JSON.parse(localStorage.getItem("initialsArray"));
+
+    if (initialsArray !== null) {   
+        for(var i = 0; i<initialsArray.length; i++){
+            var p = document.createElement("p");
+            p.innerText = initialsArray[i].nameInitials + " " + initialsArray[i].score;
+            document.getElementById("showList").appendChild(p);
+        }   
     }
     goBack.addEventListener("click", function () { 
+        document.getElementById("showFinalScores").style = 'display:none';
         intro.style = 'display:show';
         scoresList.style = 'display:none';
         timeRemaining.textContent = 75;
     })
     clearScores.addEventListener("click", function () { 
+        document.getElementById("showFinalScores").style = 'display:none';
         document.getElementById("showList").textContent = "";
+    })
+    viewFinalScores.addEventListener("click", function () { 
+        document.getElementById("showFinalScores").style = 'display:show';
+        for(var i = 0; i<initialsArray.length; i++){
+            var p = document.createElement("p");
+            p.innerText = initialsArray[i].nameInitials + " " + initialsArray[i].score;
+            document.getElementById("showFinalScores").appendChild(p);
+        }   
+        initialsArray = [];
+    })
+    hideFinalScores.addEventListener("click", function () { 
+        document.getElementById("showFinalScores").style = 'display:none';
     })
 }
 
